@@ -4,8 +4,6 @@ import React from "react";
 const Transaction = ({ logo, title, subtitle, amount }) => {
   return (
     <View>
-      {/* <Text>Transaction</Text>
-      <Text>Sell All</Text> */}
       <View style={styles.container}>
         <View style={styles.logo}>{logo}</View>
         <View>
@@ -23,7 +21,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 10,
     flex:1,
-   // justifyContent: "space-between",
     alignItems: "center",
   },
   logo: {
@@ -49,7 +46,7 @@ const styles = StyleSheet.create({
   },
   amount:{
    marginLeft:'auto',
-   marginRight: 20,
+   marginRight: 30,
    alignContent:"flex-end",
    justifyContent:"flex-end",
    color: "white",

@@ -43,7 +43,7 @@ const Actions = () => {
         </View>
       </View>
 
-      <View>
+      <View style = {{marginRight:10}}>
       <TouchableOpacity>
         <View style={styles.icons}>
         <Ionicons name="cloud-upload-outline" size={25} color="white" />
