@@ -1,8 +1,15 @@
-import React from "react";
+import React , {useContext} from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome6 } from '@expo/vector-icons';
+import { ThemeContext } from "../ThemeContext";
+
+
 
 const Actions = () => {
+  const {theme , toggleTheme} = useContext(ThemeContext);
+
   return (
     <View
       style={{
@@ -13,42 +20,42 @@ const Actions = () => {
     >
       <View>
         <TouchableOpacity>
-          <View style={styles.icons}>
-            <AntDesign name="arrowup" size={24} color="black" />
+          <View style={[styles.icons, {backgroundColor: theme.colors.logo}]}>
+            <AntDesign name="arrowup" size={24} color={theme.colors.icon} />
           </View>
         </TouchableOpacity>
 
-        <Text style={styles.text}>Sent</Text>
+        <Text style={[styles.text, {color: theme.colors.text}]}>Sent</Text>
       </View>
 
       <TouchableOpacity>
         <View>
           {/* Style the icon for the receive icon so that it looks aligned and centered */}
-          <View style={styles.icons}>
-            <AntDesign name="arrowdown" size={24} color="black" />
+          <View style={[styles.icons, {backgroundColor: theme.colors.logo}]}>            
+          <AntDesign name="arrowdown" size={24} color={theme.colors.icon} />
           </View>
-          <Text style={styles.text}>Receive</Text>
+          <Text style={[styles.text, {color: theme.colors.text}]}>Receive</Text>
         </View>
       </TouchableOpacity>
       <View>
       <TouchableOpacity>
-        <View style={styles.icons}>
-          <Image source={require("../assets/loan.png")} />
+      <View style={[styles.icons, {backgroundColor: theme.colors.logo}]}>
+      <FontAwesome6 name="dollar" size={24} color={theme.colors.icon} />
         </View>
         </TouchableOpacity>
         <View>
-        <Text style={styles.text}>Loan</Text>
+        <Text style={[styles.text, {color: theme.colors.text}]}>Loan</Text>
         </View>
       </View>
 
       <View>
       <TouchableOpacity>
-        <View style={styles.icons}>
-          <Image source={require("../assets/topUp.png")} />
+      <View style={[styles.icons, {backgroundColor: theme.colors.logo}]}>
+      <Ionicons name="cloud-upload-outline" size={25} color={theme.colors.icon} />
         </View>
         </TouchableOpacity>
         <View>
-        <Text style={styles.text}>Topup</Text>
+        <Text style={[styles.text, {color: theme.colors.text}]}>Topup</Text>
         </View>
       </View>
     </View>
