@@ -36,7 +36,9 @@ const Actions = () => {
           <Image source={require("../assets/loan.png")} />
         </View>
         </TouchableOpacity>
+        <View>
         <Text>Loan</Text>
+        </View>
       </View>
 
       <View>
@@ -45,16 +47,21 @@ const Actions = () => {
           <Image source={require("../assets/topUp.png")} />
         </View>
         </TouchableOpacity>
+        <View>
         <Text>Topup</Text>
+        </View>
       </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   icons: {
+    width: 50,
+    height: 50,
     padding: 10,
     backgroundColor: "#DFDFDF",
     borderRadius: 50,
+    alignItems: "center",
     justifyContent: "center",
   },
 });
