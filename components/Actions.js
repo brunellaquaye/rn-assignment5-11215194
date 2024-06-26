@@ -18,7 +18,7 @@ const Actions = () => {
           </View>
         </TouchableOpacity>
 
-        <Text>Sent</Text>
+        <Text style={styles.text}>Sent</Text>
       </View>
 
       <TouchableOpacity>
@@ -27,7 +27,7 @@ const Actions = () => {
           <View style={styles.icons}>
             <AntDesign name="arrowdown" size={24} color="black" />
           </View>
-          <Text>Receive</Text>
+          <Text style={styles.text}>Receive</Text>
         </View>
       </TouchableOpacity>
       <View>
@@ -37,7 +37,7 @@ const Actions = () => {
         </View>
         </TouchableOpacity>
         <View>
-        <Text>Loan</Text>
+        <Text style={styles.text}>Loan</Text>
         </View>
       </View>
 
@@ -48,7 +48,7 @@ const Actions = () => {
         </View>
         </TouchableOpacity>
         <View>
-        <Text>Topup</Text>
+        <Text style={styles.text}>Topup</Text>
         </View>
       </View>
     </View>
@@ -64,6 +64,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  text:{
+    fontWeight: "light",
+    textAlign: "center",
+      }
 });
 
 export default Actions;
