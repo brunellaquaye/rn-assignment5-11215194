@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useContext} from "react";
 import {
   StyleSheet,
   Text,
@@ -8,112 +8,124 @@ import {
   FlatList,
   TouchableOpacity,
   ScrollView,
+  StatusBar
 } from "react-native";
+import { ThemeContext } from "./ThemeContext";
 import VisaCard from "./components/VisaCard";
 import Actions from "./components/Actions";
 import Transaction from "./components/Transaction";
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
-const transactionData = [
-  {
-    id: 1,
-    logo: <Image source={require("./assets/apple.png")} />,
-    title: "Apple Store",
-    subtitle: "Entertainment",
-    amount: "-$5.99",
-  },
-  {
-    id: 2,
-    logo: <Image source={require("./assets/spotify.png")} />,
-    title: "Spotify",
-    subtitle: "Music",
-    amount: "-$12.99",
-  },
-  {
-    id: 3,
-    logo: <Image source={require("./assets/moneyTransfer.png")} />,
-    title: "Money Transfer",
-    subtitle: "Transaction",
-    amount: "-$300",
-  },
-  {
-    id: 4,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
-    amount: "-$88",
-  },
-  {
-    id: 5,
-    logo: <Image source={require("./assets/apple.png")} />,
-    title: "Apple Store",
-    subtitle: "Entertainment",
-    amount: "-$88",
-  },
-  {
-    id: 6,
-    logo: <Image source={require("./assets/spotify.png")} />,
-    title: "Spotify",
-    subtitle: "Music",
-    amount: "-$88",
-  },
-  {
-    id: 7,
-    logo: <Image source={require("./assets/apple.png")} />,
-    title: "Apple Store",
-    subtitle: "Game Shopping",
-    amount: "-$88",
-  },
-  {
-    id: 8,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
-    amount: "-$88",
-  },
-  {
-    id: 9,
-    logo: <Image source={require("./assets/spotify.png")} />,
-    title: "Spotify",
-    subtitle: "Music",
-    amount: "-$88",
-  },
-  {
-    id: 10,
-    logo: <Image source={require("./assets/apple.png")} />,
-    title: "Apple Store",
-    subtitle: "Entertainment",
-    amount: "-$88",
-  },
-  {
-    id: 11,
-    logo: <Image source={require("./assets/spotify.png")} />,
-    title: "Spotify",
-    subtitle: "Music",
-    amount: "-$88",
-  },
-];
+
+
+
 
 const HomeScreen = () => {
+  const { theme, toggleTheme} = useContext (ThemeContext);
+  const transactionData = [
+    {
+      id: 1,
+      logo: <AntDesign name="apple1" size={20} color={theme.colors.icon} />,
+      title: "Apple Store",
+      subtitle: "Entertainment",
+      amount: "-$5.99",
+    },
+    {
+      id: 2,
+      logo: <FontAwesome name="spotify" size={24} color="green" />,
+      title: "Spotify",
+      subtitle: "Music",
+      amount: "-$12.99",
+    },
+    {
+      id: 3,
+      logo: <AntDesign name="download" size={24} color={theme.colors.icon} />,
+      title: "Money Transfer",
+      subtitle: "Transaction",
+      amount: "-$300",
+    },
+    {
+      id: 4,
+      logo: <Image source={require("./assets/grocery.png")} />,
+      title: "Grocery",
+      subtitle: "Shopping",
+      amount: "-$88",
+    },
+    {
+      id: 5,
+      logo: <AntDesign name="youtube" size={24} color="red" />,
+      title: "YouTube ",
+      subtitle: "Videos",
+      amount: "-$88",
+    },
+    {
+      id: 6,
+      logo: <FontAwesome name="spotify" size={24} color="green" />,
+      title: "Spotify",
+      subtitle: "Music",
+      amount: "-$88",
+    },
+    {
+      id: 7,
+      logo: <AntDesign name="apple1" size={20} color={theme.colors.icon} />,
+      title: "Apple Store",
+      subtitle: "Game Shopping",
+      amount: "-$88",
+    },
+    {
+      id: 8,
+      logo: <Image source={require("./assets/grocery.png")} />,
+      title: "Grocery",
+      subtitle: "Shopping",
+      amount: "-$88",
+    },
+    {
+      id: 9,
+      logo: <FontAwesome name="spotify" size={24} color="green" />,
+      title: "Spotify",
+      subtitle: "Music",
+      amount: "-$88",
+    },
+    {
+      id: 10,
+      logo: <AntDesign name="apple1" size={20} color={theme.colors.icon} />,
+      title: "Apple Store",
+      subtitle: "Entertainment",
+      amount: "-$88",
+    },
+    {
+      id: 11,
+      logo:<FontAwesome name="spotify" size={24} color="green" />,
+      title: "Spotify",
+      subtitle: "Music",
+      amount: "-$88",
+    },
+  ];
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1 }}>
+     <StatusBar
+        barStyle={theme.dark ? "light-content" : "dark-content"}
+        backgroundColor={theme.colors.background}
+      />
+      <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
         <View style={styles.container}>
           <View style={styles.profile}>
             <Image source={require("./assets/profile.png")} />
           </View>
           <View>
             <Text style={styles.title}>Welcome back,</Text>
-            <Text style={styles.subtitle}>Eric Atsu</Text>
+            <Text style={[styles.subtitle,{color: theme.colors.text}]}>Eric Atsu</Text>
           </View>
-          <View style={styles.search}>
-            <Image source={require("./assets/search.png")} />
+          <View style={[styles.search, {backgroundColor: theme.colors.logo}]}>
+          <AntDesign name="search1" size={20} color={theme.colors.icon} />
           </View>
         </View>
         <VisaCard />
 
         <Actions />
         <View style={styles.transactionTitle}>
-          <Text style={styles.title1}>Transaction</Text>
+          <Text style={[styles.title1,{color: theme.colors.text}]}>Transaction</Text>
           <Text style={styles.subtitle2}>Sell All</Text>
         </View>
 
@@ -178,7 +190,7 @@ const styles = StyleSheet.create({
   },
   subtitle2: {
     fontSize: 16,
-    color: "blue",
+    color: "#3951A8",
     marginRight: 30,
   },
   profile: {
