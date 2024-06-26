@@ -31,7 +31,7 @@ const transactionData = [
   {
     id: 3,
     logo: <Image source={require("./assets/moneyTransfer.png")} />,
-    title: "MoneyTransfer",
+    title: "Money Transfer",
     subtitle: "Transaction",
     amount: "-$300",
   },
@@ -44,23 +44,23 @@ const transactionData = [
   },
   {
     id: 5,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
+    logo: <Image source={require("./assets/apple.png")} />,
+    title: "Apple Store",
+    subtitle: "Entertainment",
     amount: "-$88",
   },
   {
     id: 6,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
+    logo: <Image source={require("./assets/spotify.png")} />,
+    title: "Spotify",
+    subtitle: "Music",
     amount: "-$88",
   },
   {
     id: 7,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
+    logo: <Image source={require("./assets/apple.png")} />,
+    title: "Apple Store",
+    subtitle: "Game Shopping",
     amount: "-$88",
   },
   {
@@ -72,23 +72,23 @@ const transactionData = [
   },
   {
     id: 9,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
+    logo: <Image source={require("./assets/spotify.png")} />,
+    title: "Spotify",
+    subtitle: "Music",
     amount: "-$88",
   },
   {
     id: 10,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
+    logo: <Image source={require("./assets/apple.png")} />,
+    title: "Apple Store",
+    subtitle: "Entertainment",
     amount: "-$88",
   },
   {
     id: 11,
-    logo: <Image source={require("./assets/grocery.png")} />,
-    title: "Grocery",
-    subtitle: "Shopping",
+    logo: <Image source={require("./assets/spotify.png")} />,
+    title: "Spotify",
+    subtitle: "Music",
     amount: "-$88",
   },
 ];
@@ -171,12 +171,13 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   title1: {
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: "bold",
     color: "black",
-    marginLeft: 10,
+    marginLeft: 20,
   },
   subtitle2: {
+    fontSize: 16,
     color: "blue",
     marginRight: 30,
   },
@@ -186,8 +187,10 @@ const styles = StyleSheet.create({
   transactionTitle: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 20,
-  },
+    marginTop: 30,
+    marginBottom: 10,},
+    marginLeft: 20,
+
 });
 
 export default HomeScreen;
