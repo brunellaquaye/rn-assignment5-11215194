@@ -8,6 +8,7 @@ const lightTheme = {
     text: "#000000",
     logo: "#DFDFDF",
     icon: "#000000",
+    toggle: "#939393"
   },
 };
 
@@ -19,6 +20,7 @@ const darkTheme = {
     text: "#ffffff",
     logo: "#1F1134",
     icon: "#ffffff",
+    toggle:"green"
   },
 };
 

@@ -92,7 +92,7 @@ export default function SettingScreen() {
           <Fontisto
             name={theme.dark ? "toggle-on" : "toggle-off"}
             size={50}
-            color="#939393"
+            color={theme.colors.toggle}
             style={{ marginRight: 20 }}
           />
           </TouchableOpacity>
