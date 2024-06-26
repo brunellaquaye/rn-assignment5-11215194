@@ -97,15 +97,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-            width: "100%",
-            marginTop: 40,
-          }}
-        >
+        <View style={styles.container}>
           <View style={styles.profile}>
             <Image source={require("./assets/profile.png")} />
           </View>
@@ -120,13 +112,7 @@ const HomeScreen = () => {
         <VisaCard />
 
         <Actions />
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginTop: 20,
-          }}
-        >
+        <View style={styles.transactionTitle}>
           <Text style={styles.title1}>Transaction</Text>
           <Text style={styles.subtitle2}>Sell All</Text>
         </View>
@@ -153,6 +139,13 @@ const HomeScreen = () => {
 };
 // Check out the colours and find the right ones that look like the UI mockup
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+    width: "100%",
+    marginTop: 40,
+  },
   search: {
     backgroundColor: "#DFDFDF",
     borderRadius: 50,
@@ -189,6 +182,11 @@ const styles = StyleSheet.create({
   },
   profile: {
     marginLeft: 10,
+  },
+  transactionTitle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 20,
   },
 });
 
