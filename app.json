@@ -4,10 +4,10 @@
     "slug": "rn-assignment5-11215194",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Card.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Card.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
