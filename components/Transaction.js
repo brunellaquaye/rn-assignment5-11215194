@@ -1,18 +1,21 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import React from "react";
+import React, {useContext} from "react";
+import { ThemeContext } from "../ThemeContext";
+
 
 const Transaction = ({ logo, title, subtitle, amount }) => {
+  const {theme , toggleTheme} = useContext(ThemeContext);
   return (
     <View>
       {/* <Text>Transaction</Text>
       <Text>Sell All</Text> */}
       <View style={styles.container}>
-        <View style={styles.logo}>{logo}</View>
+        <View style={[styles.logo,{backgroundColor: theme.colors.logo}]}>{logo}</View>
         <View>
-          <Text style = {styles.title}>{title}</Text>
+          <Text style = {[styles.title, {color: theme.colors.text}]}>{title}</Text>
           <Text style = {styles.subtitle}> {subtitle}</Text>
         </View>
-        <Text style = {styles.amount}>{amount}</Text>
+        <Text style = {[styles.amount, {color: theme.colors.text}]}>{amount}</Text>
       </View>
     </View>
   );
@@ -30,7 +33,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     backgroundColor: "#DFDFDF",
-    borderRadius: 100,
+    borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 10,
