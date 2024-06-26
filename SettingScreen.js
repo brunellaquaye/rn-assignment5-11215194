@@ -5,17 +5,23 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, {useContext} from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
+import { ThemeContext } from "./ThemeContext";
 
 export default function SettingScreen() {
+  const {theme , toggleTheme} = useContext(ThemeContext);
+
+  const toggleThemeHandler = () => {
+    toggleTheme();
+  }
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 , backgroundColor : theme.colors.background }}>
       <View style={{ flex: 1 }}>
-        <Text style={styles.heading}>Settings</Text>
+        <Text style={[styles.heading, {color: theme.colors.text}]}>Settings</Text>
         <View style={styles.links}>
-          <Text style={styles.title}>Language</Text>
+          <Text style={[styles.title, {color: theme.colors.text}]}>Language</Text>
           <TouchableOpacity>
             <MaterialIcons
               name="arrow-forward-ios"
@@ -28,7 +34,7 @@ export default function SettingScreen() {
         <View style={styles.span}></View>
 
         <View style={styles.links}>
-          <Text style={styles.title}>My Profile</Text>
+          <Text style={[styles.title, {color: theme.colors.text}]}>My Profile</Text>
           <TouchableOpacity>
             <MaterialIcons
               name="arrow-forward-ios"
@@ -41,7 +47,7 @@ export default function SettingScreen() {
         <View style={styles.span}></View>
 
         <View style={styles.links}>
-          <Text style={styles.title}>Contact Us</Text>
+          <Text style={[styles.title , {color: theme.colors.text}]}>Contact Us</Text>
           <TouchableOpacity>
             <MaterialIcons
               name="arrow-forward-ios"
@@ -54,7 +60,7 @@ export default function SettingScreen() {
         <View style={styles.span}></View>
 
         <View style={styles.links}>
-          <Text style={styles.title}>Change Password</Text>
+          <Text style={[styles.title,{color: theme.colors.text}]}>Change Password</Text>
           <TouchableOpacity>
             <MaterialIcons
               name="arrow-forward-ios"
@@ -67,7 +73,7 @@ export default function SettingScreen() {
         <View style={styles.span}></View>
 
         <View style={styles.links}>
-          <Text style={styles.title}>Privacy Policy</Text>
+          <Text style={[styles.title,{color: theme.colors.text}]}>Privacy Policy</Text>
           <TouchableOpacity>
             <MaterialIcons
               name="arrow-forward-ios"
@@ -80,13 +86,16 @@ export default function SettingScreen() {
         <View style={styles.span}></View>
 
         <View style={styles.themeContainer}>
-          <Text style={styles.theme}>Theme</Text>
+          <Text style={[styles.theme,{color: theme.colors.text}]}>Theme</Text>
+          <TouchableOpacity
+          onPress = {toggleThemeHandler}>
           <Fontisto
-            name="toggle-off"
+            name={theme.dark ? "toggle-on" : "toggle-off"}
             size={50}
             color="#939393"
             style={{ marginRight: 20 }}
           />
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -103,7 +112,7 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "black",
+    color: "black" ,
     marginTop: 70,
     marginBottom: 80,
     textAlign: "center",
@@ -142,3 +151,6 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
 });
+
+// if (theme.dark) {
+//  styles.title.color = "#ffffff";}
