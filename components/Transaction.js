@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 10,
-    flex:1
+    flex:1,
+   // justifyContent: "space-between",
+    alignItems: "center",
   },
   logo: {
     width: 50,
@@ -31,16 +33,24 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     justifyContent: "center",
     alignItems: "center",
+    marginLeft: 10,
   },
   title: {
-    fontWeight: "bold"
+    fontWeight: "condensedBold",
+    fontSize: 20,
+    marginLeft: 15,
   },
   subtitle: {
     color:"#939393",
+    marginLeft: 15,
+    fontSize: 15,
     fontWeight: "condensedBold"
   },
   amount:{
-   // marginRight:0
+   marginLeft:'auto',
+   marginRight: 20,
+   alignContent:"flex-end",
+   justifyContent:"flex-end",
   }
 
 });
