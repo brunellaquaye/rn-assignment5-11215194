@@ -19,7 +19,7 @@ A toggle button was also added in the Settings screen to allow users to switch b
 
 
 ## Conclusion!
-[Light theme of the HomeScreen](HomeScreen-light.jpeg)
+[Light theme of the HomeScreen](HomeScreen-light.jpeg)![alt text](HomeScreen-light.jpeg)
 ![Light Theme of the Settings Screen](SettingsScreen-Light.jpeg)
 ![Dark theme of Homescreen](HomeScreen-dark.jpeg)
 ![Dark theme of Settings screen](SettingsScreen-dark.jpeg)
